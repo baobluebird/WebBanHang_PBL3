@@ -1,0 +1,32 @@
+.wrapper {
+    height: 120px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.inner {
+    height: 100%;
+    width: 1600px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 200px;
+    height: 60px;
+}
+.search {
+    width: 620px;
+    height: 40px;
+    font-size: 1.4rem;
+    padding: 10px;
+}
+.btn-list {
+    height: 40px;
+    padding: 0 10px;
+}
+.input {
+    margin-right: 10px;
+}
