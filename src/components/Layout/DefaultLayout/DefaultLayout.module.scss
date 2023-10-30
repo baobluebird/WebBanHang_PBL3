@@ -4,11 +4,29 @@
     align-items: center;
 }
 .container {
-    width: 1200px;
     display: flex;
- 
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+.sidebar {
+    width: 83.333%;
+    display: flex;
 }
 
 .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+.img {
+    width: 100%;
+}
+.subheader {
+    display: flex;
+}
+.subside {
+    margin: auto;
     flex: 1;
 }

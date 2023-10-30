@@ -13,6 +13,8 @@
         "react-icons": "^4.11.0",
         "react-router-dom": "^6.17.0",
         "react-scripts": "5.0.1",
+        "react-tippy": "^1.4.0",
+        "tippy.js": "^6.3.7",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
@@ -40,6 +42,8 @@
         ]
     },
     "devDependencies": {
+        "@fortawesome/fontawesome-free": "^6.4.0",
+
         "babel-plugin-module-resolver": "^5.0.0",
         "customize-cra": "^1.0.0",
         "react-app-rewired": "^2.2.1",
