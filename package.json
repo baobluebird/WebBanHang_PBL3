@@ -3,17 +3,23 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@itseasy21/react-elastic-carousel": "^0.12.3",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
+        "carousel": "^0.0.3",
         "classnames": "^2.3.2",
         "normalize.css": "^8.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^4.11.0",
+        "react-responsive-carousel": "^3.2.23",
         "react-router-dom": "^6.17.0",
         "react-scripts": "5.0.1",
+        "react-slick": "^0.29.0",
         "react-tippy": "^1.4.0",
+        "slick-carousel": "^1.8.1",
+        "swiper": "^11.0.3",
         "tippy.js": "^6.3.7",
         "web-vitals": "^2.1.4"
     },
@@ -43,7 +49,6 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^6.4.0",
-
         "babel-plugin-module-resolver": "^5.0.0",
         "customize-cra": "^1.0.0",
         "react-app-rewired": "^2.2.1",

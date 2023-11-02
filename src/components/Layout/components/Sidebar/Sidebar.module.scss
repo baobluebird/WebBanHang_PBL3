@@ -1,13 +1,17 @@
+.container {
+    width: 83.333%;
+}
 .wrapper {
     background-color: white;
-    flex: 1;
+    width: 100%;
+    display: flex;
 }
 .list-btn {
-    padding: 8px 41px;
+    padding: 10px 41px;
     cursor: pointer;
     background-color: red;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     position: relative;
     display: flex;
 }
@@ -18,6 +22,8 @@
     left: 0;
     width: 100%;
     background-color: white;
+    z-index: 2;
+    margin-top: -4px;
 }
 
 .input {
@@ -30,4 +36,16 @@
 
 .input:checked ~ .list-item {
     display: block;
+}
+.subside {
+    margin: auto;
+
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.subside {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.6rem;
 }

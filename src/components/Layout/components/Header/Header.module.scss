@@ -20,22 +20,27 @@
     margin-right: 30px;
 }
 .search {
-    width: 530px;
-    height: 40px;
-    font-size: 1.4rem;
-    padding: 10px;
+
+    width: 400px;
+    margin-left: -7px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
 }
 .btn-list {
-    height: 40px;
-    padding: 0 10px;
-    width: 133px;
+    padding: 8px 21px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 500;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 .input {
     display: flex;
-    margin-right: 10px;
+    border-radius: 20px;
 }
 .list-item {
     display: flex;

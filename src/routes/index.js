@@ -1,7 +1,9 @@
 import Home from "~/pages/Home";
-import Card from "~/pages/Card";
+import Product from "~/pages/Product";
 import Cart from "~/pages/Cart";
+import Login from "~/pages/Login";
 import { HeaderOnly } from "~/components/Layout";
+import Register from "~/pages/Register";
 const publicRoutes = [
     {
         path: '/',
@@ -13,10 +15,21 @@ const publicRoutes = [
         layout: HeaderOnly
     },
     {
-        path: '/card',
-        component: Card,
+        path: '/product',
+        component: Product,
         layout: HeaderOnly
     },
+    {
+        path: '/login',
+        component: Login,
+        layout: HeaderOnly
+    },
+    {
+        path: '/register',
+        component: Register,
+        layout: HeaderOnly
+    }
+
 ]
 const privateRoutes = [
 

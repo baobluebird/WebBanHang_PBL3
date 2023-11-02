@@ -2,9 +2,45 @@ import Header from '../components/Header'
 import Sidebar from '../components/Sidebar';
 import styles from './DefaultLayout.module.scss'
 import classNames from 'classnames/bind';
+import { sliderimg } from '~/assets/images';
+// import SliderHeader from '../components/Slider/SliderHeader';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
+import Footer from '../components/Footer';
 
 const cx = classNames.bind(styles)
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return <div className={className} style={{ ...style, display: 'block', right: '10px' }} onClick={onClick} />;
+}
+
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{ ...style, display: 'block', left: '10px', zIndex: '2' }}
+            onClick={onClick}
+        />
+    );
+}
 function DefaultLayout({ children }) {
+
+
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplaySpeed: 2000,
+        autoplay: true,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+    };
+
     return (
         <div className={cx('wrapper')}>
             <Header />
@@ -12,16 +48,28 @@ function DefaultLayout({ children }) {
                 <div className={cx('sidebar')}>
                     <Sidebar />
 
-                    <div className={cx('subside')}> <img src='../../../../public/giftbox.png' /> SẮM LAPTOP TỰU TRƯỜNG</div>
-                    <div className={cx('subside')}>MÀN HÌNH SAMSUNG GIÁ CHẤT</div>
-                    <div className={cx('subside')}> BUILD PC NHẬN PC</div>
+
+                </div>
+                <div className={styles.slider}>
+                    <Slider {...settings}>
+                        {sliderimg.map((image, index) => {
+                            return (
+                                <div key={index} className={styles.wrap}>
+                                    <img src={image.link} alt='' className={cx('styles.img')} />
+                                </div>
+                            );
+                        })}
+
+
+                    </Slider>
                 </div>
 
-                <img className={cx('img')} alt='' src='https://philong.com.vn/media/banner/25_Octcf06f39f5b4fe794b4455a1d567b94c3.jpg' />
+
+
                 <div className={cx('content')}>{children}</div>
 
             </div>
-
+            <Footer></Footer>
         </div>
     );
 }
