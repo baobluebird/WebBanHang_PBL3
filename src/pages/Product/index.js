@@ -5,7 +5,10 @@ import Sidebar from '~/components/Layout/components/Sidebar';
 import { AiFillStar } from 'react-icons/ai'
 import Product from '~/components/Layout/components/Product';
 import Footer from '~/components/Layout/components/Footer';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles)
+
 function Card() {
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString);
@@ -20,38 +23,12 @@ function Card() {
     const screen = urlParams.get('screen');
     const vga = urlParams.get('vga');
     const src = urlParams.get('src');
-    const dataRecommend = [
-        {
-            id: 1,
-            title: 'LAPTOP ACER ASPIRE 7 A715-43G-R8GA (Ryzen 5-5625U, Ram 8GB...',
-            price: '16.490.000đ',
-            src: 'https://philong.com.vn/media/product/250-29086-a715-43g-r8ga-6.png'
-        },
-        {
-            id: 2,
-            title: 'Laptop Gaming Acer Aspire 7 A715-76G-5806 (Core i5-12450H...',
-            price: '19.990.000đ',
-            src: 'https://philong.com.vn/media/product/250-30898-acer-aspire-7-a715-51g-a715-76-9.jpg'
-        },
-        {
-            id: 3,
-            title: 'Laptop Gaming Acer Aspire 7 A715-76G-59MW (Core i5...',
-            price: '16.490.000đ',
-            src: 'https://philong.com.vn/media/product/250-30897-acer-aspire-7-a715-51g-a715-76-9.jpg'
-        },
-        {
-            id: 4,
-            title: 'Laptop Acer Gaming Nitro 5 Tiger AN515-58-52SP (Intel...',
-            price: '22.990.000đ',
-            src: 'https://philong.com.vn/media/product/250-27126-gs-009168_feature_100938.jpg'
-        },
-        {
-            id: 5,
-            title: 'Laptop Acer Predator Helios Neo PHN16-71-54CD (Intel i5...',
-            price: '34.990.000đ',
-            src: 'https://philong.com.vn/media/product/250-30204-philong-laptop-gaming-acer-predator-phn16-71-6.png'
-        },
-    ]
+    const [recommends, setRecommends] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:3000/recommends')
+            .then(res => res.json())
+            .then(data => setRecommends(data))
+    }, [])
     return (
         <div >
             <div className={cx('container')}>
@@ -129,11 +106,12 @@ function Card() {
 
                     </div>
 
+
                     <div className={cx('re-container')}>
                         <div className={cx('recommend-wrap')}>
                             <div className={cx('re-title')}>Sản phẩm tương tự </div>
                             <div className={cx('recommend')}>
-                                {dataRecommend.map((item, index) => {
+                                {recommends.map((item, index) => {
                                     return (
 
                                         <Product key={index}
@@ -148,6 +126,7 @@ function Card() {
                         <div className={cx('feedback')}></div>
                         <div className={cx('comment')}></div>
                     </div>
+
                 </div>
 
             </div>

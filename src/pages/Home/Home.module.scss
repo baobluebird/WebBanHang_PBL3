@@ -19,7 +19,5 @@
 }
 .container {
     display: flex;
-}
-
-.product {
+    flex-wrap: wrap;
 }
