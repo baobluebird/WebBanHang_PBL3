@@ -22,7 +22,25 @@ function Cart() {
     }
     function handleMinus(id) {
 
-        setCount(prev => prev - 1)
+        fetch(`http://localhost:3000/carts/${id}?count=${count}`, {
+            _method: 'PATCH',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': ''
+            },
+            data: JSON.stringify(),
+            credentials: 'include'
+        })
+            .then(res => res.json())
+            .then(res => {
+                return res
+            })
+            .catch(err => console.error(err))
     }
     useEffect(() => {
         if (count < 0) {
@@ -88,7 +106,7 @@ function Cart() {
                                                     <button>-</button>
                                                 </div>
 
-                                                <input style={{ textAlign: 'center' }} value={count} onChange={() => { }} className={cx('number')} />
+                                                <input style={{ textAlign: 'center' }} value={item.count} onChange={(e) => { setCount(e.target.value) }} className={cx('number')} />
 
 
                                                 <div className={cx('plus')} onClick={handlePlush}>

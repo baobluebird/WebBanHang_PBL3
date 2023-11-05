@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from './Menu.module.scss'
 const cx = classNames.bind(styles)
-function MenuItem({ title, icon }) {
+function MenuItem({ title, icon, href }) {
     return (
-        <NavLink className={cx('menu-item')} >
+        <a className={cx('menu-item')} href={href}>
             {icon}
             <span className={cx('title')}>{title}</span>
-        </NavLink>
+        </a>
     );
 }
 

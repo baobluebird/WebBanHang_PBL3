@@ -3,13 +3,20 @@ import classNames from 'classnames/bind'
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles)
 
-function Product({ uptitle, downtitle, oldprice, newprice, src, cpu, ram, disk, operation, screen, vga }) {
+function Product({ uptitle, downtitle, oldprice, newprice, src, cpu, ram, disk, operation, screen, vga, recommend }) {
+    let myClass = ""
+    if (recommend) {
+        myClass = 'custom-width'
+    }
     return (
-        <div className={cx('Product')}>
+
+        <div className={cx('Product', myClass)}>
 
             <Link to={`/product?uptitle=${uptitle}&downtitle=${downtitle}&oldprice=${oldprice}&newprice=${newprice}&src=${encodeURIComponent(src)}
             &cpu=${encodeURIComponent(cpu)}&ram=${encodeURIComponent(ram)}&disk=${encodeURIComponent(disk)}&operation=${encodeURIComponent(operation)}&screen=${encodeURIComponent(screen)}&vga=${encodeURIComponent(vga)}
-            `}>
+            `} onClick={() => {
+                    window.scroll({ top: 0 });
+                }}>
                 <div className={cx('item')}>
 
                     <img style={{ width: '100%', margin: 'auto', height: '200px', objectFit: 'contain' }} src={src} alt="" />

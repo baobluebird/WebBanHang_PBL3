@@ -28,7 +28,7 @@ function Home() {
     return (
 
         <div className={cx('wrapper')}>
-            <div className={cx('titleProduct')}>SẢN PHẨM KHUYẾN MÃI HOT NHẤT</div>
+            <div id="sp" className={cx('titleProduct')}>SẢN PHẨM KHUYẾN MÃI HOT NHẤT</div>
 
 
             {/* <Slider {...settings}> */}

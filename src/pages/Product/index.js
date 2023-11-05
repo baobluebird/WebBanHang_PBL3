@@ -24,11 +24,12 @@ function Card() {
     const vga = urlParams.get('vga');
     const src = urlParams.get('src');
     const [recommends, setRecommends] = useState([])
+    const [check, setCheck] = useState(false)
     useEffect(() => {
         fetch('http://localhost:3000/recommends')
             .then(res => res.json())
             .then(data => setRecommends(data))
-    }, [])
+    }, [check])
     return (
         <div >
             <div className={cx('container')}>
@@ -51,8 +52,8 @@ function Card() {
                                 </div>
                                 <div className={cx('col')}>
                                     <div className={cx('col-left')}>
-                                        <li className={cx('cpu')} style={{ marginBottom: '5px' }}> <span style={{ fontWeight: '700' }}>CPU: </span>{cpu} (10 nhân (6P-core + 4E-core), 16 luồng)</li>
-                                        <li className={cx('hard-disk')} style={{ marginBottom: '5px' }}> <span style={{ fontWeight: '700' }}>Ổ cứng:</span> {disk} (nâng cấp tối đa 1 TB SSD PCIe Gen4)</li>
+                                        <li className={cx('cpu')} style={{ marginBottom: '5px' }}> <span style={{ fontWeight: '700' }}>CPU: </span>{cpu} </li>
+                                        <li className={cx('hard-disk')} style={{ marginBottom: '5px' }}> <span style={{ fontWeight: '700' }}>Ổ cứng:</span> {disk} </li>
                                         <li className={cx('monitor')}><span style={{ fontWeight: '700' }}>Màn hình: </span  >{screen}</li>
                                     </div>
                                     <div className={cx('col-right')}>
@@ -114,11 +115,24 @@ function Card() {
                                 {recommends.map((item, index) => {
                                     return (
 
-                                        <Product key={index}
-                                            uptitle={item.title}
-                                            newprice={item.price}
-                                            src={item.src}
-                                        />
+
+                                        <div style={{ width: '20%' }} key={index} onClick={() => setCheck(!check)}>
+                                            <Product key={index}
+                                                uptitle={item.uptitle}
+                                                downtitle={item.downtitle}
+                                                oldprice={item.oldprice}
+                                                newprice={item.newprice}
+                                                vga={item.vga}
+                                                screen={item.screen}
+                                                operation={item.operation}
+                                                disk={item.disk}
+                                                ram={item.ram}
+                                                cpu={item.cpu}
+                                                src={item.src}
+                                                recommend={true}
+                                            />
+                                        </div>
+
                                     )
                                 })}
                             </div>

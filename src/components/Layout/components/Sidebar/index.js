@@ -28,7 +28,7 @@ function Sidebar() {
                 <button className={cx('list-btn')}> <BsList /><span>DANH MỤC SẢN PHẨM</span>
                     <input className={cx('input')} type="checkbox" />
                     <Menu className={cx('list-item')}>
-                        <MenuItem title="Tin tức khuyến mãi" to="" icon={<PiSpeakerHigh />} />
+                        <MenuItem title="Tin tức khuyến mãi" href={'#sp'} icon={<PiSpeakerHigh />} />
                         <MenuItem title="Máy tính xách tay" to="" icon={<BsLaptop />} />
                         <MenuItem title="Màn hình máy tính" to="" icon={<GrMonitor />} />
                         <MenuItem title="Máy tính để bàn" to="" icon={<LuMonitorSpeaker />} />
